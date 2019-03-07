@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+@import 'vendor/normalize';
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+@import '../components/Header/header.scss';
+@import '../components/Footer/footer.scss';
+@import '../components/Home/home.scss';
+@import '../components/SignUp/signup.scss';
+
+// Font Variables
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+$color-pallete: (
+  'primary': #2a4d69,
+  'accent':  #4b86b4,
+  'secondary': #adcbe3,
+  'background': #e7eff6,
+  'foreground': #63ace5
+);
+
+@function get-color($key: 'primary') {
+  @return map-get($color-pallete, $key);
+}
+
+body {
+    min-height: 100vh;
+    height: 100vh;
+    background-color: get-color('background');
+    font-family: $roboto-slab;
+}
+
+
